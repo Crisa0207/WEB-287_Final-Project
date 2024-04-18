@@ -1,0 +1,385 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex-grow: 1;
+    padding-bottom: 70px;
+    position: relative;
+}
+
+h1, h2, h3 {
+    color: #000000;
+}
+
+p {
+    color: #202020;
+    line-height: 1.6;
+}
+
+
+header {
+    background-color: #8470ab;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+nav {
+    background-color: #333;
+    padding: 0.5em;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Hamburger menu styles */
+.menu-toggle {
+    display: none; /* Hide the checkbox */
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+
+.hamburger {
+    display: none;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px auto;
+    transition: background-color 0.3s ease;
+}
+
+/* Show hamburger menu for small screens */
+@media only screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Show the checkbox for small screens */
+        z-index: 1000; /* Ensure hamburger is on top of other elements */
+    }
+
+    .hamburger {
+        display: block; /* Show the hamburger icon for small screens */
+        cursor: pointer;
+    }
+
+    header nav {
+        display: none; /* Hide the navigation menu by default for small screens */
+        position: absolute;
+        top: 60px; /* Adjust this value as needed */
+        right: 20px; /* Adjust this value as needed */
+        background-color: #333; /* Background color for the menu */
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .menu-toggle:checked ~ nav {
+        display: block; /* Show the navigation menu when the checkbox is checked */
+    }
+}
+
+section {
+    margin: 20px;
+}
+
+.section-title {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.section-content {
+    margin-left: 20px;
+}
+
+.contact-info {
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    margin-bottom: 5px;
+}
+
+.education, .experience {
+    margin-bottom: 20px;
+}
+
+.education h3, .experience h3 {
+    margin-bottom: 10px;
+}
+
+.education-item, .experience-item {
+    margin-bottom: 10px;
+}
+
+.skills {
+    margin-bottom: 20px;
+}
+
+.skills ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skills li {
+    margin-bottom: 5px;
+}
+
+/* Responsive Styles */
+
+/* Mobile-first approach */
+@media only screen and (min-width: 480px) {
+    /* Adjustments for screens wider than 480px */
+
+    /* Header */
+    header {
+        padding: 10px;
+    }
+
+    /* Navigation */
+    nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+    /* Adjustments for screens wider than 768px */
+
+    /* Grid layout for main content */
+    section {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid layout */
+        grid-gap: 20px;
+    }
+
+    /* Adjustments for specific sections */
+    #home {
+        flex-direction: row;
+    }
+
+    #home img {
+        margin-right: 0;
+    }
+
+    #self-portrait {
+        float: none;
+        margin-right: 0;
+    }
+}
+
+/* Larger screens */
+@media only screen and (min-width: 1200px) {
+    /* Adjustments for screens wider than 1200px */
+    
+    /* Limit max-width for better readability */
+    body {
+        max-width: 100%;
+        margin: 0;
+    }
+
+    /* Navigation */
+    nav ul {
+        display: flex;
+        justify-content: center;
+    }
+    nav ul li {
+        display: inline; /* Change display to inline */
+        margin-bottom: 0 10px; /* Add margin between navigation items */
+    }
+
+    /* Grid layout for main content */
+    section {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid layout */
+        grid-gap: 20px;
+    }
+
+    /* Adjustments for specific sections */
+    .project-item {
+        width: 100%; /* Make project items fill the entire grid cell */
+    }
+
+    /* Increase spacing between paragraphs */
+    p {
+        margin-bottom: 20px;
+    }
+}
+
+
+#home {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#home h2 {
+    flex: 1;
+}
+
+#home img {
+    max-width: 100%;
+    height: auto;
+    margin-right: 20px; /* Add margin to create space between image and text */
+}
+
+#self-portrait {
+    float: left;
+    max-width: 300px;
+    height: auto;
+    margin-right: 20px;
+}
+
+/* Additional styling for better layout */
+#home-text {
+    flex: 1;
+}
+
+#home-text p {
+    margin-bottom: 10px;
+}
+
+.blog-post {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.blog-post h2 {
+    color: #2c3e50;
+}
+
+.blog-post p {
+    color: #555;
+    line-height: 1.6;
+}
+
+#blog {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#blog h2 {
+    margin-bottom: 20px;
+}
+
+.blog-section {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+/* Add padding to the first .blog-section */
+.blog-section:first-of-type {
+    padding-bottom: 20px; /* Adjust the value as needed */
+}
+
+.blog-post h3 {
+    color: #2c3e50;
+}
+
+.project-item {
+    border: 1px solid #ddd;
+    display: inline-block; /* Display projects in a row */
+    vertical-align: top; /* Align projects at the top */
+    width: 300px; /* Adjust the width of the project items */
+    margin: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+.section-title {
+    color: #8470ab;
+}
+
+#contact {
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 10px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#contact h2 {
+    color: #8470ab;
+}
+
+.purple-text {
+    color: #8470ab;
+}
+
+#contact p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+#contact a {
+    color: #3498db;
+}
+
+footer {
+    background-color: #8470ab;
+    color: #fff;
+    padding: 1em;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Add hover animation for project items */
+.project-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-item.hovered {
+    transform: scale(1.05);
+}
