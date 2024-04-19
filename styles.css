@@ -277,6 +277,10 @@ section {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.blog-post:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
 .blog-post h2 {
     color: #2c3e50;
 }
@@ -317,8 +321,16 @@ section {
     display: inline-block; /* Display projects in a row */
     vertical-align: top; /* Align projects at the top */
     width: 300px; /* Adjust the width of the project items */
+    padding: 10px;
     margin: 10px;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out,  box-shadow 0.3s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.project-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
 .project-item img {
@@ -331,13 +343,37 @@ section {
 }
 
 #contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
     max-width: 600px;
     margin: 0 auto;
     margin-top: 10px;
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.contact-info, .contact-form {
+    flex: 0 0 48%;
+}
+
+.contact-info {
+    padding-right: 20px;
+}
+
+.contact-form {
+    padding-left: 20px;
+}
+
+.contact-form form {
+    margin-top: 20px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
 }
 
 #contact h2 {
@@ -356,6 +392,43 @@ section {
 
 #contact a {
     color: #3498db;
+}
+
+#contact form {
+    margin-top: 20px;
+}
+
+#contact form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#contact form input[type="text"],
+#contact form input[type="email"],
+#contact form textarea {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#contact form textarea {
+    resize: vertical;
+}
+
+#contact form button {
+    background-color: #8470ab;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#contact form button:hover {
+    background-color: #6b5894;
 }
 
 footer {
